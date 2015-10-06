@@ -29,7 +29,8 @@ module TsvBuddy
   # returns: String in TSV format
   def to_tsv
     keys = @data[0].keys
-    keys_to_tsv = @data[0].keys.reduce { |key1, key2| key1 + "\t" + key2 } + "\r\n" #Use reduce to turn keys into tsv format
+    keys_to_tsv = @data[0].keys.reduce { |key1, key2| key1 + "\t" + key2 } + "\r\n" 
+    #Use reduce to turn keys into tsv format
 
     value_to_tsv = @data.map.with_index { |hash, index| hash.values.reduce { |value1, value2| value1 + "\t" + value2 } }
     value_to_tsv.map! { |value| value + "\r\n"  }
